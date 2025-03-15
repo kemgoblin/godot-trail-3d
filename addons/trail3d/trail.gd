@@ -91,7 +91,7 @@ func update(delta: float) -> void:
 		var center := (position_a + position_b) / 2.0
 		var offset := (position_a - position_b) / 2.0
 		
-		var lifetime_percentage := particle.time_left / particle.lifetime
+		var lifetime_percentage := 1.0 - (particle.time_left / particle.lifetime)
 		if width_curve:
 			offset *= width_curve.sample_baked(lifetime_percentage)
 		var color := Color.WHITE
