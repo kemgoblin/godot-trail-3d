@@ -13,7 +13,7 @@
 
 1. Add a **Trail3D** node to your scene
 2. Set **Origin A** and **Origin B** nodes
-3. Add material to **Material Override**
+3. Add material
 	- Standard Godot material:
 		- Set cull mode to **Disabled** so you can see your trail from either side
 		- Shading will not look correct as normals are not calculated, so set shading mode to **Unshaded**
