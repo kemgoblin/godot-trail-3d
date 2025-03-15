@@ -1,6 +1,7 @@
 # Trail3D
 
 #### Simple ribbon trail using ImmediateMesh
+![trail preview](https://github.com/user-attachments/assets/659845d4-8261-4ec2-a226-2e44086a1826)
 
 ## Features
 - Texture UV
