@@ -13,8 +13,14 @@ var _mesh: ImmediateMesh:
 		_mesh = new_mesh
 		mesh = _mesh
 
-@export var origin_a: Node3D
-@export var origin_b: Node3D
+@export var origin_a: Node3D:
+	set(value):
+		origin_a = value
+		update_configuration_warnings()
+@export var origin_b: Node3D:
+	set(value):
+		origin_b = value
+		update_configuration_warnings()
 var last_position_a: Vector3
 var last_position_b: Vector3
 
@@ -107,6 +113,15 @@ func update(delta: float) -> void:
 		particle.time_left -= delta
 		if particle.time_left <= 0:
 			particles.remove_at(i)
+
+
+func _get_configuration_warnings() -> PackedStringArray:
+	var warnings: PackedStringArray
+	
+	if not (origin_a and origin_b):
+		warnings.push_back("Origin nodes not set, trail will not render")
+	
+	return warnings
 
 
 class TrailParticle:
