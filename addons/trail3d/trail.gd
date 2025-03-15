@@ -28,6 +28,7 @@ var particles: Array[TrailParticle]
 @export var lifetime: float = 1
 @export var width_curve: Curve
 @export var color_gradient: Gradient
+@export var material: Material
 @export var uv_scale: float = 1
 var whole_distance: float
 @export var emit_distance: float = 0.1
@@ -78,7 +79,7 @@ func update(delta: float) -> void:
 	_mesh.clear_surfaces()
 	if particles.size() < 2:
 		return
-	_mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLE_STRIP)
+	_mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLE_STRIP, material)
 	for i in particles.size():
 		var particle := particles[i]
 		
